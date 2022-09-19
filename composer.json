@@ -1,0 +1,22 @@
+{
+  "name": "promrukav/test",
+  "description": "test task",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Alchin Matvei",
+      "email": "alchin.mi@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  },
+  "require": {
+    "robmorgan/phinx": "^0.12.12",
+    "ext-PDO": "^7.4",
+    "voodoophp/paginator": "^2.1"
+  }
+}
