@@ -5,7 +5,7 @@ namespace App\Views;
 
 
 class AuthView {
-    public function __construct($valid, $loginSuccess, $login, $password)
+    public function __construct($valid = false, $loginSuccess = false)
     {
         require 'template/auth.php';
     }

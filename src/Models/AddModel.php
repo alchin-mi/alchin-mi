@@ -4,13 +4,15 @@
 namespace App\Models;
 
 
-class TaskAddModel extends BaseModel {
-    public function addTask ($name, $email, $text)
+use Exception;
+
+class AddModel extends BaseModel {
+    public function addTask ()
     {
         try {
             $this->getConnect()->beginTransaction();
             $sql = "INSERT INTO tasks (name, email, text) VALUES (?,?,?)";
-            $this->getConnect()->prepare($sql)->execute([$name, $email, $text]);
+            $this->getConnect()->prepare($sql)->execute([$_POST['name'], $_POST['email'], $_POST['text']]);
             $this->getConnect()->commit();
         }
         catch (Exception $e){

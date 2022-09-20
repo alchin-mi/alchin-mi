@@ -8,10 +8,10 @@ use App\Models\AuthModel;
 
 class Auth
 {
-    static public function login($login, $password, AuthModel $model): bool
+    static public function login(AuthModel $model): bool
     {
-        $user = $model->getUser($login, $password);
-        if ($user[0]['password'] === md5($password)) {
+        $user = $model->getUser();
+        if ($user[0]['password'] === md5($_POST['password'])) {
             $_SESSION['user'] = $user[0];
             return true;
         }
@@ -22,7 +22,7 @@ class Auth
         unset($_SESSION['user']);
     }
 
-    public function isAuthed(): bool {
+    static public function isAuthed(): bool {
         if (array_key_exists('user', $_SESSION) && $_SESSION['user'] !== null) {
             return true;
         } else {
@@ -30,9 +30,9 @@ class Auth
         }
     }
 
-    public function getCurrentUser(): ?array {
-        if ($this->isAuthed()) {
-            return $this->findBylogin($_SESSION['user']);
+    static public function getCurrentUser(): ?array {
+        if (self::isAuthed()) {
+            return $_SESSION['user'];
         }
         return null;
     }

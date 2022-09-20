@@ -15,12 +15,12 @@
         <div class="col-md-6">
             <label for="login" class="form-label">Логин</label>
             <input name="login" type="name" class="form-control" id="login" placeholder="Ведите логин"
-                   value="<?= !$valid ? $login : '' ?>">
+                   value="<?= !$valid ? $_POST['login'] : '' ?>">
         </div>
         <div class="col-md-6">
             <label for="password" class="form-label">Пароль</label>
-            <input name="password" type="password" class="form-control" id="password" placeholder="Ведите email"
-                   value="<?= !$valid ? $password : '' ?>">
+            <input name="password" type="password" class="form-control" id="password" placeholder="Ведите пароль"
+                   value="<?= !$valid ? $_POST['password'] : '' ?>">
         </div>
         <div class="col-12">
             <input type="submit" class="btn btn-primary"

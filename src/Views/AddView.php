@@ -4,8 +4,8 @@
 namespace App\Views;
 
 
-class TaskAddView {
-    public function __construct($valid, $addSuccess, $name, $email, $text) {
-        require 'template/taskAdd.php';
+class AddView {
+    public function __construct($valid, $addSuccess) {
+        require 'template/add.php';
     }
 }
