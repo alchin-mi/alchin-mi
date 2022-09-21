@@ -1,4 +1,5 @@
 .idea
+/assets
 /vendor
 /config/config.inc.php
 composer.lock
