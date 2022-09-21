@@ -1,16 +1,17 @@
-### Hi there 👋
+Установка
+------------
 
-<!--
-**alchin-mi/alchin-mi** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+* После скачивания репозитория локально подключите зависимости
+```bash
+composer install
+```
+* Создайте файл конфигурации. Это можно сделать переименовав файл `example.config.inc.php -> config.inc.php` в директории `/config` относительно корня, подставив в него нужные значения.
+* Если зависимости подключились верно, инициализируйте файл для настройки [phinx](https://book.cakephp.org/phinx/0/en/install.html) командой 
+```bash
+php /vendor/bin/phinx init`
+```
+* Затем сконфигурируйте созданный файл `phinx.php` по примеру из файла `/example.phinx.php`
+* Дальше накатите миграции 
+```bash
+php /vendor/bin/phinx migrate
+```
