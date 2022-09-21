@@ -14,11 +14,15 @@ class EditController
 
     public function __construct(int $id)
     {
-        if (count($_POST) == 6) {
+        $editModel = new EditModel();
+        if (count($_POST) == 5 || count($_POST) == 6) {
             $valid = $this->validate();
+            if ($valid) {
+                $editSuccess = $editModel->editTask($id);
+            }
         }
-        if ($task = (new EditModel())->getTask($id)) {
-            new EditVew($task, $valid);
+        if ($task = $editModel->getTask($id)) {
+            new EditVew($valid, $editSuccess,$task);
         }
     }
 }

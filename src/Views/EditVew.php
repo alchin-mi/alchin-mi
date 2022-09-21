@@ -4,10 +4,20 @@
 namespace App\Views;
 
 
-class EditVew
+class EditVew extends BaseView
 {
-    public function __construct(array $task, $valid)
+    protected function getTitle(): string
     {
-        require 'template\edit.php';
+        return 'Форма для создания задачи';
+    }
+
+    protected function getContent($valid, $editSuccess, $task)
+    {
+        require 'template/edit.php';
+    }
+
+    protected function render($title, $content)
+    {
+        require 'template/layout.php';
     }
 }

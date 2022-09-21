@@ -11,7 +11,7 @@ class IndexController {
         $this->setSort($_GET['sort'] ?? null);
         $this->setLimit($_GET['limit'] ?? null);
         $model = new IndexModel();
-        new IndexView($model->getAllTasks());
+        new IndexView(true, true, $model->getAllTasks());
     }
 
     private function setLimit (?int $gLimit)

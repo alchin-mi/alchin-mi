@@ -12,7 +12,7 @@ final class InitialProject extends AbstractMigration
                 ->addColumn('text', 'text', ['null' => true])
                 ->addColumn('email', 'string', ['limit' => 255])
                 ->addColumn('status', 'integer', ['limit' => 2, 'default' => 0])
-                ->addColumn('moderate', 'integer', ['limit' => 2, 'default' => 0])
+                ->addColumn('moderated', 'integer', ['limit' => 2, 'default' => 0])
                 ->addColumn('created', 'datetime')
                 ->addColumn('updated', 'timestamp', ['default' => 'CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'])
                 ->create();

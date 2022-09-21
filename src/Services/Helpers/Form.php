@@ -68,7 +68,7 @@ trait Form
     }
     private static function checkStatus (int $status)
     {
-        if ($status == 0 || $status == 1) {
+        if ($status !== 1) {
             throw new Exception('Некорректно заполнен статус');
         }
     }

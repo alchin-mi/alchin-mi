@@ -5,8 +5,15 @@ namespace App\Views;
 
 
 
-class IndexView {
-    public function __construct($data) {
+class IndexView extends BaseView
+{
+    protected function getTitle(): string
+    {
+        return 'Список задач';
+    }
+
+    protected function getContent($valid, $editSuccess, $data)
+    {
         $pagination = '';
         foreach ($data['paginator']->toArray() as $page) {
             $href = "<a class='page-link' href=\"{$page["url"]}\">{$page["label"]}</a>";
@@ -14,8 +21,12 @@ class IndexView {
             $pagination .= "<li class='page-item{$activeClass}'>{$href}</li>".PHP_EOL;
         }
         $sort = $_SESSION['sort'];
-
         require 'template/index.php';
+    }
+
+    protected function render($title, $content)
+    {
+        require 'template/layout.php';
     }
 
     private function getSortUrl (int $val): string
