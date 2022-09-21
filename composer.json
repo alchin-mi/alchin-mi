@@ -15,8 +15,8 @@
     }
   },
   "require": {
-    "robmorgan/phinx": "^0.12.12",
-    "ext-PDO": "^7.4",
+    "robmorgan/phinx": "*",
+    "ext-PDO": "*",
     "voodoophp/paginator": "^2.1"
   }
 }
